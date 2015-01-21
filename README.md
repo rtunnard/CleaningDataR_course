@@ -1,4 +1,9 @@
 # CleaningDataR_course
-A submission repository for the course project of the Getting and Cleaning Data Coursera course in R
+<h4>A submission repository for the course project of the Getting and Cleaning Data Coursera course in R</h4>
 
-This directory contains my R script, a README and the code book.
+
+This repository contains an R script "run_analysis.R", this README, and the code book.
+
+When the Samsung data in placed in your R working directory with its default direcoty name "UCI HAR Dataset", running the script run_analysis.R will produce a data frame, "TidyTable".
+
+A description of the cleaning process, the variables in TidyTable and other such information is included in the code book "codebook.md".
