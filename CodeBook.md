@@ -1,10 +1,10 @@
 <h3>CodeBook.md</h3>
-<h5>This code book describes the cleaning process in run_analysis.R, the code used, and the final variables in the output "TidyTable".</h5>
+<h5>This code book describes the cleaning process in `run_analysis.R`, the code used, and the final variables in the output `TidyTable`.</h5>
 
 <h6>Overview</h6>
-The run_analysis.R script is written to read in the Samsung wearable device data from the "UCI HAR Dataset" directory, produced when zip archive is extracted. With UCI HAR Dataset in the working directory, the script will read in data from the testing and training dataset. The full range of measurements available is trimmed to include only the mean and standard deviations of each variable.  These data are then combined with the test subject IDs and desciptions of the activities corresponding to each record.
+The `run_analysis.R` script is written to read in the Samsung wearable device data from the "UCI HAR Dataset" directory, produced when zip archive is extracted. With UCI HAR Dataset in the working directory, the script will read in data from the testing and training dataset. The full range of measurements available is trimmed to include only the mean and standard deviations of each variable.  These data are then combined with the test subject IDs and desciptions of the activities corresponding to each record.
 
-Finally, the mean of the gyrometer variables is taken, grouped by the subject ID and activity, and output to the TidyTable data product.
+Finally, the mean of the gyrometer variables is taken, grouped by the subject ID and activity, and output as the `TidyTable` data product.
 
 <h6>Line descriptions</h6>
 Here follows a line by line description of the code.
@@ -25,7 +25,7 @@ Here follows a line by line description of the code.
 
 `ln 16`: the test and train datasets and now merged. Since these two datasets have identical columns, the `all=TRUE` option is redundant. (This can be confirmed by running `any(is.na(merged))`, which would return `TRUE` is any `NA` has been introduced in this step).
 
-`ln 17`: the R native `grep` command (familiar to any UNIX users) is invoked to select only columns which are means or standard deviations. This exlcudes meanFrequencies. The specific `grep` search string `"mean\\.|std\\."` searches for the strings mean. or std.. The full stop is used as non-standard characters are lost in the assignment to column titles in `ln 7-8`, replaced with full stops. This then searches the column titles in `names(merged)` and returns the titles matching this search string to be used as indexes for `merged`. The result overwrites `merged`.
+`ln 17`: the R native `grep` command (familiar to any UNIX users) is invoked to select only columns which are means or standard deviations. This exlcudes `meanFrequencies`. The specific `grep` search string `"mean\\.|std\\."` searches for the strings mean. or std.. The full stop is used as non-standard characters are lost in the assignment to column titles in `ln 7-8`, replaced with full stops. This then searches the column titles in `names(merged)` and returns the titles matching this search string to be used as indexes for `merged`. The result overwrites `merged`.
 
 `ln 20-22`: the `ActivityID`, `Activity` and `SubjectID` data are added to the `merged` data frame as new columns.
 
