@@ -32,5 +32,5 @@ Here follows a line by line description of the code.
 `ln 24`: here we make the `TidyTable` output. The `group_by` and `summarise_each` funtions are used in conjunction here to apply the `mean` function over every column of the grouped data <b>except</b> those used to group the data. When `SubjectID` and `Activity` are used as grouping id variables, this returns the mean for every other column, for each `SubjectID` - `Activity` pairing. 
 
 <h6>Desciption of TidyTable</h6>
-
+The product of the `run_analysis.R` script is the dimXdim data frame `TidyTable`. This contains the mean value of 
 
