@@ -1,5 +1,5 @@
-library(dplyr)
 library(plyr)
+library(dplyr)
 
 col_titles <- read.table('./UCI HAR Dataset/features.txt',stringsAsFactors = FALSE)
 col_titles <- col_titles[,2] #Remove the index to give just names
