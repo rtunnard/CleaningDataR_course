@@ -32,5 +32,10 @@ Here follows a line by line description of the code.
 `ln 24`: here we make the `TidyTable` output. The `group_by` and `summarise_each` funtions are used in conjunction here to apply the `mean` function over every column of the grouped data <b>except</b> those used to group the data. When `SubjectID` and `Activity` are used as grouping id variables, this returns the mean for every other column, for each `SubjectID` - `Activity` pairing. 
 
 <h6>Desciption of TidyTable</h6>
-The product of the `run_analysis.R` script is the dimXdim data frame `TidyTable`. This contains the mean value of 
+The product of the `run_analysis.R` script is the data frame `TidyTable`, with 180 observations of 69 variables in wide table format. The observations are the six unique activities (`LAYING`, `SITTING`, `WALKING`, `WALKING_DOWNSTAIRS` and`WALKING_UPSTAIRS`) for each of the 30 `SubjectID`s. The variables are:
+
+1. `SubjectID` - a unique identifier between 1 and 30 for each of the thirty subjects.
+2. `Activity` - the descriptive explantion of the activity the following measurements describe.
+3 - 68. - the mean and standard deviations of the various components of the gyrometer measurements collected from the wearable devices. For each activity and subject ID the all measurements of each gyrometer component have been meaned.
+69. `ActivityID` - the id code for the activities named in the `Activity` column. This has been included for refering back to the raw data at a later date.
 
