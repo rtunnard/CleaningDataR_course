@@ -24,4 +24,4 @@ merged$SubjectID <- c(test_subject[,1],train_subject[,1])
 colnames(merged) <- gsub("\\.","",names(merged))
 colnames(merged) <- tolower(names(merged))
 
-TidyTable <- merged %>% group_by(SubjectID,Activity) %>% summarise_each(funs(mean))
+TidyTable <- merged %>% group_by(subjectid,activity) %>% summarise_each(funs(mean))
