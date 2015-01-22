@@ -29,16 +29,18 @@ Here follows a line by line description of the code.
 
 `ln 20-22`: the `ActivityID`, `Activity` and `SubjectID` data are added to the `merged` data frame as new columns.
 
-`ln 24`: here we make the `TidyTable` output. The `group_by` and `summarise_each` funtions are used in conjunction here to apply the `mean` function over every column of the grouped data <b>except</b> those used to group the data. When `SubjectID` and `Activity` are used as grouping id variables, this returns the mean for every other column, for each `SubjectID` - `Activity` pairing. 
+`ln 24-25`: here we ruin the dataset to satisfy the ridicuolous definition of a tidy dataset as one without dots or captial letters in the column names. This is completely wrong and makes the column names harder to read. Nevertheless, it is what has been asked for in Week 4 Lecture 1.
+
+`ln 27`: here we make the `TidyTable` output. The `group_by` and `summarise_each` funtions are used in conjunction here to apply the `mean` function over every column of the grouped data <b>except</b> those used to group the data. When `subjectid` and `activity` are used as grouping id variables, this returns the mean for every other column, for each `subjectid` - `activity` pairing. 
 
 <h6>Desciption of TidyTable</h6>
-The product of the `run_analysis.R` script is the data frame `TidyTable`, with 180 observations of 69 variables in wide table format. The observations are the six unique activities (`LAYING`, `SITTING`, `WALKING`, `WALKING_DOWNSTAIRS` and`WALKING_UPSTAIRS`) for each of the 30 `SubjectID`s. The variables are:
+The product of the `run_analysis.R` script is the data frame `TidyTable`, with 180 observations of 69 variables in wide table format. The observations are the six unique activities (`LAYING`, `SITTING`, `WALKING`, `WALKING_DOWNSTAIRS` and`WALKING_UPSTAIRS`) for each of the 30 `subjectid`s. The variables are:
 
-Col 1: `SubjectID` - a unique identifier between 1 and 30 for each of the thirty subjects.
+Col 1: `subjectid` - a unique identifier between 1 and 30 for each of the thirty subjects.
 
-Col 2: `Activity` - the descriptive explantion of the activity the following measurements describe.
+Col 2: `activity` - the descriptive explantion of the activity the following measurements describe.
 
 Cols 3 - 68: - the mean and standard deviations of the various components of the gyrometer measurements collected from the wearable devices. For each activity and subject ID the all measurements of each gyrometer component have been meaned.
 
-Col 69: `ActivityID` - the id code for the activities named in the `Activity` column. This has been included for refering back to the raw data at a later date.
+Col 69: `activityid` - the id code for the activities named in the `activity` column. This has been included for refering back to the raw data at a later date.
 
